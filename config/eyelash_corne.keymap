@@ -84,10 +84,10 @@
                 &kp Y          &kp H     &kp A  &kp E  &kp I  &mt LSHIFT COLON
 
                 &kp LSHFT      &kp X     &kp M  &kp C  &kp V  &kp Q
-                &kp K          &kp P     &kp DOT  &kp MINUS  &kp COMMA  &kp UNDER
+                &kp K          &kp P     &kp DOT  &kp MINUS  &kp COMMA  &lt 3 UNDER
 
                 &mt LALT LC(LS(LEFT))  &mt LSHIFT BSPC  &mt LCTRL TAB
-                &sl RALT               &lt DIGITS SPACE
+                &sl RALT               &lt 2 SPACE
                 /* GUI (hold) / Ctrl+Shift+Right */
                 &mt LGUI LC(LS(RIGHT))
             >;
@@ -106,9 +106,7 @@
                 &kp K          &kp P     &kp DOT  &kp MINUS  &kp COMMA  &kp UNDER
 
                 &mt LALT LC(LS(LEFT))  &mt LSHIFT BSPC  &mt LCTRL TAB
-                &sk RALT               &lt DIGITS SPACE  /* TODO: тут в оригіналі був &lt DIGITS без другого
-                                                              аргументу — hold-tap &lt вимагає (layer, keycode).
-                                                              Постав свою клавішу замість SPACE, якщо треба іншу. */
+                &sk RALT               &lt 2 SPACE  
                 /* GUI (hold) / Ctrl+Shift+Right */
                 &mt LGUI LC(LS(RIGHT))
             >;
