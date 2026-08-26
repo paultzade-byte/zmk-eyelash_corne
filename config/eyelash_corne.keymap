@@ -34,12 +34,7 @@
         };
 
 
-        /* ALTGR sticky */
-        altgr_sticky: altgr_sticky {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <1>;
-            release-after-ms = <1000>;
-        };
+
     };
 
     /*
