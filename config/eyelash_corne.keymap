@@ -91,13 +91,13 @@
         graphite_altgr_layer {
             display-name = "GRAPH_ALT";
             bindings = <
-                &esc_fn ESC 4  &kp B     &kp L  &kp D  &kp W  &kp Z
+                &esc_fn ESC 4  &kp B     &kp L  &kp D  &kp W  &kp Z &trans
                 &kp APOS       &kp F     &kp O  &kp U  &kp J  &kp RET
 
-                &kp LCTRL      &kp N     &kp R  &kp T  &kp S  &kp G
+                &kp LCTRL      &kp N     &kp R  &kp T  &kp S  &kp G &trans &trans &trans
                 &kp Y          &kp H     &kp A  &kp E  &kp I  &mt LSHIFT COLON
 
-                &kp LSHFT      &kp X     &kp M  &kp C  &kp V  &kp Q
+                &kp LSHFT      &kp X     &kp M  &kp C  &kp V  &kp Q &trans &trans
                 &kp K          &kp P     &kp DOT  &kp MINUS  &kp COMMA  &kp UNDER
 
                 &mt LALT LC(LS(LEFT))  &mt LSHIFT BSPC  &mt LCTRL TAB
@@ -110,13 +110,13 @@
         digits_layer {
             display-name = "DIGITS";
             bindings = <
-                &kp LC(HOME)  &kp HOME  &kp LC(LEFT)  &kp LC(RIGHT)  &kp END  &kp PG_UP
+                &kp LC(HOME)  &kp HOME  &kp LC(LEFT)  &kp LC(RIGHT)  &kp END  &kp PG_UP &trans
                 &kp FSLH      &kp N7    &kp N8        &kp N9         &kp LS(N8)  &trans
 
-                &kp LC(END)   &kp LEFT  &kp UP        &kp DOWN       &kp RIGHT  &kp PG_DN
+                &kp LC(END)   &kp LEFT  &kp UP        &kp DOWN       &kp RIGHT  &kp PG_DN &trans &trans &trans
                 &kp MINUS     &kp N4    &kp N5        &kp N6         &kp PLUS   &kp LSHIFT
 
-                &kp NUBS      &kp LBRC  &kp LS(N9)    &kp LS(N0)     &kp RBRC   &kp NUBS
+                &kp NUBS      &kp LBRC  &kp LS(N9)    &kp LS(N0)     &kp RBRC   &kp NUBS &trans &trans 
                 &trans        &kp N0    &kp N1        &kp N2         &kp N3     &kp EQUAL  &trans
 
                 &kp K_APP  &kp BSPC  &kp LS(DEL)
@@ -131,13 +131,13 @@
                                                  потрібен окремий macro/unicode behavior */
                 &kp EQUAL  &none /* TODO: em dash — те саме */  &kp BSLH
 
-                &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
+                &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans &trans
 
-                &trans     &kp COMMA  &kp TILDE  &kp PIPE  &kp ASTRK  &kp FSLH
+                &trans     &kp COMMA  &kp TILDE  &kp PIPE  &kp ASTRK  &kp FSLH &trans &trans &trans
                 &kp MINUS  &kp DLLR   &kp PRCNT  &kp CARET /* TODO: дублює CARET вище, звір навмисно чи ні */
                 &kp LBKT   &kp RBKT
 
-                &trans     &kp LBRC   &kp COLON  &kp GRAVE  &kp RBRC  &trans
+                &trans     &kp LBRC   &kp COLON  &kp GRAVE  &kp RBRC  &trans &trans &trans
                 &kp LT     &kp EXCL   &kp AT     &kp HASH   &kp GT    &kp UNDER
 
                 &trans  &kp BSPC  &kp DEL
@@ -148,13 +148,13 @@
         function_layer {
             display-name = "FN";
             bindings = <
-                &kp LC(HOME)  &kp HOME  &kp LC(LEFT)  &kp LC(RIGHT)  &kp END  &kp PG_UP
+                &kp LC(HOME)  &kp HOME  &kp LC(LEFT)  &kp LC(RIGHT)  &kp END  &kp PG_UP &trans
                 &kp F12       &kp F7    &kp F8        &kp F9         &trans   &trans
 
-                &kp LC(END)   &kp LEFT  &kp UP        &kp DOWN       &kp RIGHT  &kp PG_DN
+                &kp LC(END)   &kp LEFT  &kp UP        &kp DOWN       &kp RIGHT  &kp PG_DN &trans &trans &trans
                 &kp F11       &kp F4    &kp F5        &kp F6         &trans     &trans
 
-                &kp NUBS      &kp LBRC  &kp LS(N9)    &kp LS(N0)     &kp RBRC   &kp NUBS
+                &kp NUBS      &kp LBRC  &kp LS(N9)    &kp LS(N0)     &kp RBRC   &kp NUBS &trans &trans
                 &trans        &kp F10   &kp F1        &kp F2         &kp F3     &trans  &trans
 
                 &trans  &trans  &trans
@@ -166,13 +166,13 @@
             display-name = "CYRILLIC";
             bindings = <
 
-                &trans     &trans     &none      &kp EQUAL  &none      &kp BSLH
+                &trans     &trans     &none      &kp EQUAL  &none      &kp BSLH &trans
                 &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &trans
 
-                &trans     &kp COMMA  &kp TILDE  &kp PIPE   &kp ASTRK  &kp FSLH
+                &trans     &kp COMMA  &kp TILDE  &kp PIPE   &kp ASTRK  &kp FSLH &trans &trans &trans
                 &kp MINUS  &kp DLLR   &kp PRCNT  &kp CARET  &kp LBKT   &kp RBKT
 
-                &trans     &kp DOT    &trans /* TODO */  &trans /* TODO */  &trans /* TODO */  &trans /* TODO */
+                &trans     &kp DOT    &trans /* TODO */  &trans /* TODO */  &trans /* TODO */  &trans /* TODO */ &trans &trans
                 &kp LT     &kp EXCL   &kp AT     &kp HASH   &kp GT     &trans
 
                 &trans /* TODO */  &kp BSPC  &kp DEL
@@ -184,13 +184,13 @@
             display-name = "CYR_ALTGR";
             bindings = <
 
-                &trans     &trans     &none      &kp EQUAL  &none      &kp BSLH
+                &trans     &trans     &none      &kp EQUAL  &none      &kp BSLH &trans 
                 &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &trans
 
-                &trans     &kp COMMA  &kp TILDE  &kp PIPE   &kp ASTRK  &kp FSLH
+                &trans     &kp COMMA  &kp TILDE  &kp PIPE   &kp ASTRK  &kp FSLH &trans &trans &trans
                 &kp MINUS  &kp DLLR   &kp PRCNT  &kp CARET  &kp LBKT   &kp RBKT
 
-                &trans     &kp LBRC   &kp COLON  &kp GRAVE  &kp RBRC   &trans
+                &trans     &kp LBRC   &kp COLON  &kp GRAVE  &kp RBRC   &trans &trans &trans
                 &kp LT     &kp EXCL   &kp AT     &kp HASH   &kp GT     &trans
 
                 &trans /* TODO */  &kp BSPC  &kp DEL
