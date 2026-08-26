@@ -48,7 +48,7 @@
 
         combo_cyrillic {
             timeout-ms = <80>;
-            key-positions = <15 16 19 20>;
+            key-positions = <13 14 15 16>;
             bindings = <&to CYRILLIC>;
             layers = <GRAPHITE>;
         };
@@ -72,13 +72,13 @@
         graphite_layer {
             display-name = "GRAPH";
             bindings = <
-                &esc_fn ESC 4  &kp B     &kp L  &kp D  &kp W  &kp Z
+                &esc_fn ESC 4  &kp B     &kp L  &kp D  &kp W  &kp Z &trans
                 &kp APOS       &kp F     &kp O  &kp U  &kp J  &kp RET
 
-                &kp LCTRL      &kp N     &kp R  &kp T  &kp S  &kp G
+                &kp LCTRL      &kp N     &kp R  &kp T  &kp S  &kp G &trans &trans &trans
                 &kp Y          &kp H     &kp A  &kp E  &kp I  &mt LSHIFT COLON
 
-                &kp LSHFT      &kp X     &kp M  &kp C  &kp V  &kp Q
+                &kp LSHFT      &kp X     &kp M  &kp C  &kp V  &kp Q &trans &trans
                 &kp K          &kp P     &kp DOT  &kp MINUS  &kp COMMA  &lt 3 UNDER
 
                 &mt LALT LC(LS(LEFT))  &mt LSHIFT BSPC  &mt LCTRL TAB
