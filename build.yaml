@@ -2,6 +2,8 @@
 include:
   - board: eyelash_nano
     shield: eyelash_corne_right nice_oled
+    # права на батареї: без сну, інакше після простою 4-5 с перепідключення
+    cmake-args: -DCONFIG_ZMK_SLEEP=n
   - board: eyelash_nano
     shield: eyelash_corne_left nice_oled
     snippet: studio-rpc-usb-uart
