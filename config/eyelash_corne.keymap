@@ -15,6 +15,7 @@
 #define L_FN         4
 #define L_CYR_S      5
 #define L_CYR        6
+#define L_FN_C       7
 
 / {
     behaviors {
@@ -98,21 +99,24 @@
                 ;
         };
 
-        /* Явний вибір мови (не перемикач): шар + розкладка ОС за гарячою
-         * клавішею Ctrl+Shift+1 (us) / Ctrl+Shift+2 (ua). Повторне натискання
-         * нічого не ламає, розсинхрон виправляється одним натисканням. 2026-10-30. */
+        /* Мова ОС — перемикач Alt+Space (Linux: grp:alt_space_toggle; macOS:
+         * Option+Space). Щоб шар і мова ОС не розходились, перемикач
+         * надсилається лише тоді, коли мова справді змінюється: на FN (прийшли
+         * з латиниці) Lang CYR = шар + Alt+Space, а →LAT — лише шар; на FN_C
+         * (прийшли з кирилиці) навпаки. Розсинхрон (мову змінили мишкою) —
+         * клавіша «Ресинк» на FN: лише Alt+Space. 2026-10-30. */
         lang_cyr: lang_cyr {
             compatible = "zmk,behavior-macro";
             display-name = "Lang CYR";
             #binding-cells = <0>;
-            bindings = <&to L_CYR>, <&kp LC(LS(N2))>;
+            bindings = <&to L_CYR>, <&kp LA(SPACE)>;
         };
 
         lang_lat: lang_lat {
             compatible = "zmk,behavior-macro";
             display-name = "Lang LAT";
             #binding-cells = <0>;
-            bindings = <&to L_GRAPH>, <&kp LC(LS(N1))>;
+            bindings = <&to L_GRAPH>, <&kp LA(SPACE)>;
         };
 
     };
@@ -164,8 +168,8 @@
             display-name = "FN";
             bindings = <
                 /* верх */ &rgb_ug 11 0  &mkp 8  &mkp 4  &mkp 2  &mkp 1  &kp 0x000c006f  &trans  &kp F12  &kp F7  &kp F8  &kp F9  &trans  &kp PSCRN
-                /* дім */ &lang_tog  &kp 0x000c00b6  &kp 0x000c00e9  &kp 0x000c00ea  &kp 0x000c00b5  &kp 0x000c0070  &trans  &trans  &trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans  &trans
-                /* низ */ &none  &bt 4 0  &kp 0x000c00cd  &kp 0x000c00b7  &kp LS(RBKT)  &rgb_ug 0 0  &trans  &trans  &kp F10  &kp F1  &kp F2  &kp F3  &trans  &trans
+                /* дім */ &lang_cyr  &kp 0x000c00b6  &kp 0x000c00e9  &kp 0x000c00ea  &kp 0x000c00b5  &kp 0x000c0070  &trans  &trans  &trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans  &to L_GRAPH
+                /* низ */ &kp LA(SPACE)  &bt 4 0  &kp 0x000c00cd  &kp 0x000c00b7  &none  &rgb_ug 0 0  &trans  &trans  &kp F10  &kp F1  &kp F2  &kp F3  &trans  &trans
                 /* тхамби */ &kp 0x000c029f  &kp 0x000c0221  &trans  &trans  &kp CAPS  &none
             >;
         };
@@ -188,6 +192,25 @@
                 /* низ */ &lt L_SYMBOL A  &lt L_DIGITS LS(FSLH)  &kp COMMA  &hml LC(C) M  &hml LC(V) X  &kp W  &trans  &trans  &kp SQT  &kp LBKT  &kp V  &kp Z  &lt L_DIGITS DOT  &lt L_SYMBOL GRAVE
                 /* тхамби */ &mt LCTRL LA(LS(LEFT))  &mt LALT BSPC  &mt LGUI TAB  &sl L_CYR_S  &lt L_DIGITS SPACE  &mt LA(RSHFT) LA(LS(RIGHT))
             >;
+        };
+
+        /* Умовний: вмикається сам, коли активні CYR і FN (див. conditional_layers). */
+        layer_fn_c {
+            display-name = "FN_C";
+            bindings = <
+                /* верх */ &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                /* дім */ &to L_CYR  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &lang_lat
+                /* низ */ &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                /* тхамби */ &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        fn_from_cyr {
+            if-layers = <L_CYR L_FN>;
+            then-layer = <L_FN_C>;
         };
     };
 };
