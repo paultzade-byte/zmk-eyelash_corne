@@ -55,6 +55,34 @@
             bindings = <&kp>, <&kp>;
         };
 
+        /* Кирилиця (ua): тап ",", Shift+тап "." (шифт маскується, xkb ua дає
+         * "." на голій FSLH). Стандарт ЙЦУКЕН навпаки — кома частіша. 2026-10-30. */
+        ua_comma_dot: ua_comma_dot {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(FSLH)>, <&kp FSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        /* Кома-крапка з холдом шару (як &lt): &lt_cd ШАР 0 */
+        lt_cd: layer_tap_comma_dot {
+            compatible = "zmk,behavior-hold-tap";
+            display-name = "LT Comma/Dot";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&ua_comma_dot>;
+        };
+
+        /* Латиниця (us): тап ":", Shift+тап ";". 2026-10-30. */
+        colon_semi: colon_semi {
+            compatible = "zmk,behavior-mod-morph";
+            display-name = "Colon/Semi";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SEMI)>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
     };
 
     macros {
@@ -68,6 +96,23 @@
                 , <&macro_tap &kp SPACE>
                 , <&macro_release &kp LALT>
                 ;
+        };
+
+        /* Явний вибір мови (не перемикач): шар + розкладка ОС за гарячою
+         * клавішею Ctrl+Shift+1 (us) / Ctrl+Shift+2 (ua). Повторне натискання
+         * нічого не ламає, розсинхрон виправляється одним натисканням. 2026-10-30. */
+        lang_cyr: lang_cyr {
+            compatible = "zmk,behavior-macro";
+            display-name = "Lang CYR";
+            #binding-cells = <0>;
+            bindings = <&to L_CYR>, <&kp LC(LS(N2))>;
+        };
+
+        lang_lat: lang_lat {
+            compatible = "zmk,behavior-macro";
+            display-name = "Lang LAT";
+            #binding-cells = <0>;
+            bindings = <&to L_GRAPH>, <&kp LC(LS(N1))>;
         };
 
     };
@@ -91,16 +136,16 @@
                 /* верх */ &trans  &kp B  &kp L  &kp D  &kp W  &kp Z  &trans  &kp SQT  &kp F  &kp O  &kp U  &kp J  &kp RET
                 /* дім */ &kp NUBS  &kp LS(COMMA)  &kp LS(N9)  &kp LS(N0)  &kp LS(DOT)  &kp LS(NUBS)  &trans  &trans  &trans  &kp Y  &kp H  &kp A  &kp E  &kp I  &mt LSHFT LS(SEMI)
                 /* низ */ &kp NUBS  &kp LS(LBKT)  &kp LBKT  &kp RBKT  &kp LS(RBKT)  &kp LS(NUBS)  &trans  &trans  &kp K  &kp P  &kp FSLH  &kp MINUS  &kp COMMA  &kp LS(MINUS)
-                /* тхамби */ &kp LS(RET)  &kp RET  &kp LC(RET)  &sk RALT  &lt L_DIGITS SPACE  &none
+                /* тхамби */ &kp LS(RET)  &kp BSPC  &kp LC(RET)  &sk RALT  &lt L_DIGITS SPACE  &kp LS(LC(RIGHT))
             >;
         };
 
         layer_digits {
             display-name = "DIGITS";
             bindings = <
-                /* верх */ &kp LA(HOME)  &kp HOME  &kp LA(LEFT)  &kp LA(RIGHT)  &kp END  &kp PG_UP  &trans  &kp FSLH  &kp N7  &kp N8  &kp N9  &kp LS(N8)  &trans
+                /* верх */ &kp LA(HOME)  &kp HOME  &kp LA(LEFT)  &kp LA(RIGHT)  &kp END  &kp PG_UP  &trans  &kp KP_SLASH  &kp N7  &kp N8  &kp N9  &kp LS(N8)  &trans
                 /* дім */ &kp LA(END)  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  &trans  &trans  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp LS(EQUAL)  &kp LSHFT
-                /* низ */ &kp LGUI  &kp K_APP  &kp LC(TAB)  &kp TAB  &kp LS(N7)  &kp LS(SEMI)  &trans  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp EQUAL
+                /* низ */ &kp LGUI  &kp K_APP  &kp LC(TAB)  &kp TAB  &kp LS(N7)  &kp LS(SEMI)  &trans  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp KP_DOT
                 /* тхамби */ &mt LALT LS(LC(LEFT))  &mt LSHFT BSPC  &kp DEL  &kp LS(DEL)  &kp SPACE  &none
             >;
         };
@@ -129,9 +174,9 @@
             display-name = "CYR_S";
             bindings = <
                 /* верх */ &none  &kp LG(HOME)  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LG(END)  &kp RBKT  &trans  &kp KP_SLASH  &kp N7  &kp N8  &kp N9  &kp N0  &kp RET
-                /* дім */ &kp LSHFT  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp BSLH  &trans  &trans  &trans  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp EQUAL  &kp LSHFT
-                /* низ */ &none  &kp LS(N9)  &kp NUBS  &kp MINUS  &kp LS(N0)  &kp O  &trans  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &kp FSLH  &none
-                /* тхамби */ &kp RALT  &none  &mt LGUI TAB  &kp LCTRL  &kp K_APP  &kp LA(LS(RIGHT))
+                /* дім */ &kp NUBS  &kp RA(N6)  &kp LS(N9)  &kp LS(N0)  &kp RA(N7)  &kp BSLH  &trans  &trans  &trans  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp EQUAL  &kp LSHFT
+                /* низ */ &kp RA(COMMA)  &kp RA(LS(N9))  &kp RA(N9)  &kp RA(N0)  &kp RA(LS(N0))  &kp RA(DOT)  &trans  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &kp FSLH  &none
+                /* тхамби */ &kp RALT  &kp RALT  &mt LGUI TAB  &kp LCTRL  &kp K_APP  &kp LA(LS(RIGHT))
             >;
         };
 
@@ -141,7 +186,7 @@
                 /* верх */ &lt L_FN ESC  &kp SEMI  &kp G  &kp E  &kp L  &kp I  &trans  &kp O  &kp U  &kp K  &kp T  &kp RBKT  &lt L_FN RET
                 /* дім */ &lt L_CYR_S P  &kp C  &kp Y  &hml LSHFT J  &kp N  &kp R  &trans  &trans  &trans  &kp B  &kp S  &hmr RSHFT H  &kp F  &kp D  &kp Q
                 /* низ */ &lt L_SYMBOL A  &lt L_DIGITS LS(FSLH)  &kp COMMA  &hml LC(C) M  &hml LC(V) X  &kp W  &trans  &trans  &kp SQT  &kp LBKT  &kp V  &kp Z  &lt L_DIGITS DOT  &lt L_SYMBOL GRAVE
-                /* тхамби */ &mt LCTRL LA(LS(LEFT))  &mt LALT BSPC  &mt LGUI TAB  &mt RALT DEL  &lt L_DIGITS SPACE  &mt LA(RSHFT) LA(LS(RIGHT))
+                /* тхамби */ &mt LCTRL LA(LS(LEFT))  &mt LALT BSPC  &mt LGUI TAB  &sl L_CYR_S  &lt L_DIGITS SPACE  &mt LA(RSHFT) LA(LS(RIGHT))
             >;
         };
     };
