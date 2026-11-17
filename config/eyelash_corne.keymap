@@ -87,6 +87,15 @@
     };
 
     macros {
+        /* Літери без автоповтору: на натискання — tap (press+release ~30 мс),
+         * ОС не бачить затиснутої клавіші. BSPC/стрілки/пробіл тощо — &kp. 2026-11-17. */
+        nr: no_repeat {
+            compatible = "zmk,behavior-macro-one-param";
+            display-name = "No Repeat";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
         lang_tog: lang_toggle {
             compatible = "zmk,behavior-macro";
             display-name = "Lang Toggle";
@@ -127,9 +136,9 @@
         layer_graph {
             display-name = "GRAPH";
             bindings = <
-                /* верх */ &lt L_FN ESC  &kp B  &kp L  &kp D  &kp W  &kp Z  &trans  &kp SQT  &kp F  &kp O  &kp U  &kp J  &lt L_FN RET
-                /* дім */ &none  &kp N  &kp R  &hml LSHFT T  &kp S  &kp G  &trans  &trans  &trans  &kp Y  &kp H  &hmr RSHFT A  &kp E  &kp I  &kp SEMI
-                /* низ */ &lt L_SYMBOL LGUI  &lt L_DIGITS X  &kp M  &hml LC(C) C  &hml LC(V) V  &kp Q  &trans  &trans  &kp K  &kp P  &kp DOT  &kp MINUS  &lt L_DIGITS COMMA  &lt L_SYMBOL LS(MINUS)
+                /* верх */ &lt L_FN ESC  &nr B  &nr L  &nr D  &nr W  &nr Z  &trans  &kp SQT  &nr F  &nr O  &nr U  &nr J  &lt L_FN RET
+                /* дім */ &none  &nr N  &nr R  &hml LSHFT T  &nr S  &nr G  &trans  &trans  &trans  &nr Y  &nr H  &hmr RSHFT A  &nr E  &nr I  &kp SEMI
+                /* низ */ &lt L_SYMBOL LGUI  &lt L_DIGITS X  &nr M  &hml LC(C) C  &hml LC(V) V  &nr Q  &trans  &trans  &nr K  &nr P  &kp DOT  &kp MINUS  &lt L_DIGITS COMMA  &lt L_SYMBOL LS(MINUS)
                 /* тхамби */ &mt LCTRL LA(LS(LEFT))  &mt LALT BSPC  &mt LGUI TAB  &sl L_GRAPH_ALT  &lt L_DIGITS SPACE  &mt LA(RSHFT) LA(LS(RIGHT))
             >;
         };
@@ -137,9 +146,9 @@
         layer_graph_alt {
             display-name = "GRAPH_ALT";
             bindings = <
-                /* верх */ &trans  &kp B  &kp L  &kp D  &kp W  &kp Z  &trans  &kp SQT  &kp F  &kp O  &kp U  &kp J  &kp RET
-                /* дім */ &kp NUBS  &kp LS(COMMA)  &kp LS(N9)  &kp LS(N0)  &kp LS(DOT)  &kp LS(NUBS)  &trans  &trans  &trans  &kp Y  &kp H  &kp A  &kp E  &kp I  &mt LSHFT LS(SEMI)
-                /* низ */ &kp NUBS  &kp LS(LBKT)  &kp LBKT  &kp RBKT  &kp LS(RBKT)  &kp LS(NUBS)  &trans  &trans  &kp K  &kp P  &kp FSLH  &kp MINUS  &kp COMMA  &kp LS(MINUS)
+                /* верх */ &trans  &nr B  &nr L  &nr D  &nr W  &nr Z  &trans  &kp SQT  &nr F  &nr O  &nr U  &nr J  &kp RET
+                /* дім */ &kp NUBS  &kp LS(COMMA)  &kp LS(N9)  &kp LS(N0)  &kp LS(DOT)  &kp LS(NUBS)  &trans  &trans  &trans  &nr Y  &nr H  &nr A  &nr E  &nr I  &mt LSHFT LS(SEMI)
+                /* низ */ &kp NUBS  &kp LS(LBKT)  &kp LBKT  &kp RBKT  &kp LS(RBKT)  &kp LS(NUBS)  &trans  &trans  &nr K  &nr P  &kp FSLH  &kp MINUS  &kp COMMA  &kp LS(MINUS)
                 /* тхамби */ &kp LS(RET)  &kp BSPC  &kp LC(RET)  &sk RALT  &lt L_DIGITS SPACE  &kp LS(LC(RIGHT))
             >;
         };
@@ -187,9 +196,9 @@
         layer_cyr {
             display-name = "CYR";
             bindings = <
-                /* верх */ &lt L_FN ESC  &kp SEMI  &kp G  &kp E  &kp L  &kp I  &trans  &kp O  &kp U  &kp K  &kp T  &kp RBKT  &lt L_FN RET
-                /* дім */ &lt L_CYR_S P  &kp C  &kp Y  &hml LSHFT J  &kp N  &kp R  &trans  &trans  &trans  &kp B  &kp S  &hmr RSHFT H  &kp F  &kp D  &kp Q
-                /* низ */ &lt L_SYMBOL A  &lt L_DIGITS LS(FSLH)  &kp COMMA  &hml LC(C) M  &hml LC(V) X  &kp W  &trans  &trans  &kp SQT  &kp LBKT  &kp V  &kp Z  &lt L_DIGITS DOT  &lt L_SYMBOL GRAVE
+                /* верх */ &lt L_FN ESC  &nr SEMI  &nr G  &nr E  &nr L  &nr I  &trans  &nr O  &nr U  &nr K  &nr T  &nr RBKT  &lt L_FN RET
+                /* дім */ &lt L_CYR_S P  &nr C  &nr Y  &hml LSHFT J  &nr N  &nr R  &trans  &trans  &trans  &nr B  &nr S  &hmr RSHFT H  &nr F  &nr D  &nr Q
+                /* низ */ &lt L_SYMBOL A  &lt L_DIGITS LS(FSLH)  &nr COMMA  &hml LC(C) M  &hml LC(V) X  &nr W  &trans  &trans  &nr SQT  &nr LBKT  &nr V  &nr Z  &lt L_DIGITS DOT  &lt L_SYMBOL GRAVE
                 /* тхамби */ &mt LCTRL LA(LS(LEFT))  &mt LALT BSPC  &mt LGUI TAB  &sl L_CYR_S  &lt L_DIGITS SPACE  &mt LA(RSHFT) LA(LS(RIGHT))
             >;
         };
