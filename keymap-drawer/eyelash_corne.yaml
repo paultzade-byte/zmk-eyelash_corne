@@ -49,6 +49,55 @@ layers:
   - {t: GRAPH_ALT, h: '$$mdi:gesture-tap-hold$$'}
   - {t: '$$mdi:keyboard-space$$', h: DIGITS}
   - {t: 'Alt+Sft+$$mdi:arrow-right-bold$$', h: 'Alt+$$mdi:apple-keyboard-shift$$'}
+  CYR:
+  - {t: '$$mdi:keyboard-esc$$', h: FN}
+  - '&nr SEMI'
+  - '&nr COMMA'
+  - '&nr E'
+  - '&nr L'
+  - '&nr I'
+  - {t: '$$mdi:transfer$$', type: trans}
+  - '&nr O'
+  - '&nr U'
+  - '&nr K'
+  - '&nr LBKT'
+  - '&nr DOT'
+  - {t: '$$mdi:keyboard-return$$', h: FN}
+  - {t: P, h: CYR_S}
+  - '&nr C'
+  - '&nr Y'
+  - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
+  - '&nr N'
+  - '&nr R'
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - '&nr B'
+  - '&nr S'
+  - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
+  - '&nr F'
+  - '&nr D'
+  - '&nr RBKT'
+  - {t: A, h: SYMBOL}
+  - {t: Sft+/, h: DIGITS, s: /}
+  - '&nr G'
+  - {t: M, h: Ctl+C}
+  - {t: X, h: Ctl+V}
+  - '&nr W'
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - '&nr SQT'
+  - '&nr Z'
+  - '&nr V'
+  - '&nr T'
+  - '&nr Q'
+  - {t: Sft+`, h: SYMBOL, s: Sft+~}
+  - {t: 'Alt+Sft+$$mdi:arrow-left-bold$$', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '$$mdi:keyboard-tab$$', h: LGUI}
+  - {t: CYR_S, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: '$$mdi:keyboard-space$$', h: DIGITS}
+  - {t: 'Alt+Sft+$$mdi:arrow-right-bold$$', h: 'Alt+$$mdi:apple-keyboard-shift$$'}
   GRAPH_ALT:
   - {t: '$$mdi:transfer$$', type: trans}
   - '&nr B'
@@ -259,7 +308,7 @@ layers:
   - {t: '9', s: (}
   - {t: AltGr+-, s: AltGr+_}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - NUBS
+  - {t: NUBS, type: held}
   - {t: AltGr+6, s: AltGr+^}
   - {t: Sft+9, s: Sft+(}
   - {t: Sft+0, h: '$$mdi:apple-keyboard-shift$$', s: Sft+)}
@@ -291,58 +340,9 @@ layers:
   - {t: 'Alt+Sft+$$mdi:arrow-left-bold$$', h: '$$mdi:apple-keyboard-control$$'}
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:keyboard-tab$$', h: LGUI}
-  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:apple-keyboard-control$$', type: held alternate}
   - APP
   - Alt+Sft+$$mdi:arrow-right-bold$$
-  CYR:
-  - {t: '$$mdi:keyboard-esc$$', h: FN}
-  - '&nr SEMI'
-  - '&nr COMMA'
-  - '&nr E'
-  - '&nr L'
-  - '&nr I'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - '&nr O'
-  - '&nr U'
-  - '&nr K'
-  - '&nr LBKT'
-  - '&nr DOT'
-  - {t: '$$mdi:keyboard-return$$', h: FN}
-  - {t: P, h: CYR_S}
-  - '&nr C'
-  - '&nr Y'
-  - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
-  - '&nr N'
-  - '&nr R'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - '&nr B'
-  - '&nr S'
-  - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
-  - '&nr F'
-  - '&nr D'
-  - '&nr RBKT'
-  - {t: A, h: SYMBOL}
-  - {t: Sft+/, h: DIGITS, s: /}
-  - '&nr G'
-  - {t: M, h: Ctl+C}
-  - {t: X, h: Ctl+V}
-  - '&nr W'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - '&nr SQT'
-  - '&nr Z'
-  - '&nr V'
-  - '&nr T'
-  - '&nr Q'
-  - {t: Sft+`, h: SYMBOL, s: Sft+~}
-  - {t: 'Alt+Sft+$$mdi:arrow-left-bold$$', h: '$$mdi:apple-keyboard-control$$'}
-  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-option$$'}
-  - {t: '$$mdi:keyboard-tab$$', h: LGUI}
-  - {t: CYR_S, h: '$$mdi:gesture-tap-hold$$'}
-  - {t: '$$mdi:keyboard-space$$', h: DIGITS}
-  - {t: 'Alt+Sft+$$mdi:arrow-right-bold$$', h: 'Alt+$$mdi:apple-keyboard-shift$$'}
   FN_C:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
