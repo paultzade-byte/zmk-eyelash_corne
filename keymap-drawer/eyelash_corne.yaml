@@ -344,6 +344,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: DIGITS}
   - {t: 'Alt+Sft+$$mdi:arrow-right-bold$$', h: 'Alt+$$mdi:apple-keyboard-shift$$'}
   FN_C:
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -355,8 +356,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: CYR, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
