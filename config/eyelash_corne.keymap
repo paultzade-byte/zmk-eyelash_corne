@@ -137,7 +137,7 @@
             display-name = "GRAPH";
             bindings = <
                 /* верх */ &lt L_FN ESC  &nr B  &nr L  &nr D  &nr W  &nr Z  &trans  &kp SQT  &nr F  &nr O  &nr U  &nr J  &lt L_FN RET
-                /* дім */ &none  &nr N  &nr R  &hml LSHFT T  &nr S  &nr G  &trans  &trans  &trans  &nr Y  &nr H  &hmr RSHFT A  &nr E  &nr I  &kp SEMI
+                /* дім */ &none  &nr N  &nr R  &hml LSHFT T  &nr S  &nr G  &trans  &trans  &trans  &nr Y  &nr H  &hmr RSHFT A  &nr E  &nr I  &colon_semi
                 /* низ */ &lt L_SYMBOL LGUI  &lt L_DIGITS X  &nr M  &hml LC(C) C  &hml LC(V) V  &nr Q  &trans  &trans  &nr K  &nr P  &kp DOT  &kp MINUS  &lt L_DIGITS COMMA  &lt L_SYMBOL LS(MINUS)
                 /* тхамби */ &mt LCTRL LA(LS(LEFT))  &mt LALT BSPC  &mt LGUI TAB  &sl L_GRAPH_ALT  &lt L_DIGITS SPACE  &mt LA(RSHFT) LA(LS(RIGHT))
             >;
@@ -146,10 +146,10 @@
         layer_graph_alt {
             display-name = "GRAPH_ALT";
             bindings = <
-                /* верх */ &trans  &nr B  &nr L  &nr D  &nr W  &nr Z  &trans  &kp SQT  &nr F  &nr O  &nr U  &nr J  &kp RET
-                /* дім */ &kp NUBS  &kp LS(COMMA)  &kp LS(N9)  &kp LS(N0)  &kp LS(DOT)  &kp LS(NUBS)  &trans  &trans  &trans  &nr Y  &nr H  &nr A  &nr E  &nr I  &mt LSHFT LS(SEMI)
-                /* низ */ &kp NUBS  &kp LS(LBKT)  &kp LBKT  &kp RBKT  &kp LS(RBKT)  &kp LS(NUBS)  &trans  &trans  &nr K  &nr P  &kp FSLH  &kp MINUS  &kp COMMA  &kp LS(MINUS)
-                /* тхамби */ &kp LS(RET)  &kp BSPC  &kp LC(RET)  &sk RALT  &lt L_DIGITS SPACE  &kp LS(LC(RIGHT))
+                /* верх */ &trans  &nr B  &nr L  &nr W  &nr D  &nr Z  &trans  &kp SQT  &nr F  &nr O  &nr U  &nr J  &kp RET
+                /* дім */ &kp BSLH  &kp LS(COMMA)  &kp LS(N9)  &hml LSHFT LS(N0)  &kp LS(DOT)  &kp LS(BSLH)  &trans  &trans  &trans  &nr Y  &nr H  &hmr RSHFT A  &nr E  &nr I  &mt LSHFT LS(SEMI)
+                /* низ */ &kp GRAVE  &kp LS(LBKT)  &kp LBKT  &kp RBKT  &kp LS(RBKT)  &kp LS(GRAVE)  &trans  &trans  &nr K  &nr P  &kp FSLH  &kp MINUS  &kp COMMA  &kp LS(MINUS)
+                /* тхамби */ &mt LCTRL LS(LC(LEFT))  &kp BSPC  &mt LGUI LC(RET)  &sk RALT  &lt L_DIGITS SPACE  &kp LS(LC(RIGHT))
             >;
         };
 
@@ -157,53 +157,52 @@
             display-name = "DIGITS";
             bindings = <
                 /* верх */ &kp LA(HOME)  &kp HOME  &kp LA(LEFT)  &kp LA(RIGHT)  &kp END  &kp PG_UP  &trans  &kp KP_SLASH  &kp N7  &kp N8  &kp N9  &kp LS(N8)  &trans
-                /* дім */ &kp LA(END)  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans  &trans  &trans  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp LS(EQUAL)  &kp LSHFT
-                /* низ */ &kp LGUI  &kp K_APP  &kp LC(TAB)  &kp TAB  &kp LS(N7)  &kp LS(SEMI)  &trans  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp KP_DOT
-                /* тхамби */ &mt LALT LS(LC(LEFT))  &mt LSHFT BSPC  &kp DEL  &kp LS(DEL)  &kp SPACE  &none
+                /* дім */ &kp LA(END)  &kp LEFT  &kp UP  &hml LSHFT DOWN  &kp RIGHT  &kp PG_DN  &trans  &trans  &trans  &kp MINUS  &kp N4  &hmr RSHFT N5  &kp N6  &kp LS(EQUAL)  &kp LSHFT
+                /* низ */ &kp LGUI  &kp K_APP  &kp LC(TAB)  &kp TAB  &kp LS(N7)  &none  &trans  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &kp EQUAL  &kp KP_DOT
+                /* тхамби */ &mt LCTRL LS(LC(LEFT))  &mt LALT BSPC  &mt LGUI DEL  &kp LS(DEL)  &kp SPACE  &none
             >;
         };
 
         layer_symbol {
             display-name = "SYMBOL";
             bindings = <
-                /* верх */ &trans  &kp LS(FSLH)  &kp LS(N1)  &kp EQUAL  &kp FSLH  &kp BSLH  &trans  &kp LS(N0)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp RBKT  &trans
-                /* дім */ &kp LS(LALT)  &kp COMMA  &kp LS(GRAVE)  &kp LS(BSLH)  &kp LS(N8)  &trans  &trans  &trans  &trans  &kp MINUS  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &trans  &trans
-                /* низ */ &kp LGUI  &kp K_APP  &kp RS(SEMI)  &kp GRAVE  &trans  &rgb_ug 0 0  &trans  &trans  &kp LS(COMMA)  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(DOT)  &kp LS(MINUS)
-                /* тхамби */ &trans  &mt LSHFT BSPC  &kp DEL  &none  &trans  &none
+                /* верх */ &trans  &kp LS(FSLH)  &kp LS(N1)  &kp EQUAL  &kp KP_SLASH  &kp KP_PLUS  &trans  &kp LS(N0)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &none  &trans
+                /* дім */ &kp LS(LALT)  &kp KP_DOT  &kp LS(GRAVE)  &hml LSHFT RA(LS(BSLH))  &kp LS(N8)  &trans  &trans  &trans  &trans  &kp MINUS  &kp LS(N4)  &hmr RSHFT LS(N5)  &kp LS(N6)  &trans  &trans
+                /* низ */ &kp LGUI  &kp K_APP  &kp LS(BSLH)  &kp GRAVE  &trans  &rgb_ug 0 0  &trans  &trans  &none  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &none  &kp LS(MINUS)
+                /* тхамби */ &trans  &mt LALT BSPC  &mt LGUI DEL  &none  &trans  &none
             >;
         };
 
         layer_fn {
             display-name = "FN";
             bindings = <
-                /* верх */ &rgb_ug 11 0  &mkp 8  &mkp 4  &mkp 2  &mkp 1  &kp 0x000c006f  &trans  &kp F12  &kp F7  &kp F8  &kp F9  &trans  &kp PSCRN
-                /* дім */ &lang_cyr  &kp 0x000c00b6  &kp 0x000c00e9  &kp 0x000c00ea  &kp 0x000c00b5  &kp 0x000c0070  &trans  &trans  &trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans  &to L_GRAPH
-                /* низ */ &kp LA(SPACE)  &bt 4 0  &kp 0x000c00cd  &kp 0x000c00b7  &none  &rgb_ug 0 0  &trans  &trans  &kp F10  &kp F1  &kp F2  &kp F3  &trans  &trans
-                /* тхамби */ &kp 0x000c029f  &kp 0x000c0221  &trans  &trans  &kp CAPS  &none
+                /* верх */ &rgb_ug 11 0  &mkp 8  &mkp 4  &mkp 2  &mkp 1  &kp 0x000c006f  &trans  &kp F12  &kp F7  &kp F8  &kp F9  &rgb_ug 7 0  &kp PSCRN
+                /* дім */ &lang_cyr  &kp 0x000c00b6  &kp 0x000c00e9  &hml LSHFT 0x000c00ea  &kp 0x000c00b5  &kp 0x000c0070  &trans  &trans  &trans  &kp F11  &kp F4  &hmr RSHFT F5  &kp F6  &rgb_ug 8 0  &to L_GRAPH
+                /* низ */ &kp LA(SPACE)  &trans  &kp 0x000c00cd  &kp 0x000c00b7  &kp 0x000c0221  &bt 4 0  &trans  &trans  &kp F10  &kp F1  &kp F2  &kp F3  &rgb_ug 11 0  &rgb_ug 0 0
+                /* тхамби */ &mt LCTRL 0x000c029f  &mt LALT BSPC  &trans  &rgb_ug 4 0  &kp CAPS  &rgb_ug 3 0
             >;
         };
 
         layer_cyr_s {
             display-name = "CYR_S";
             bindings = <
-                /* верх */ &none  &kp LG(HOME)  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LG(END)  &kp RBKT  &trans  &kp KP_SLASH  &kp N7  &kp N8  &kp N9  &kp N0  &kp RET
-                /* дім */ &kp NUBS  &kp RA(N6)  &kp LS(N9)  &kp LS(N0)  &kp RA(N7)  &kp BSLH  &trans  &trans  &trans  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp EQUAL  &kp LSHFT
-                /* низ */ &kp RA(COMMA)  &kp RA(LS(N9))  &kp RA(N9)  &kp RA(N0)  &kp RA(LS(N0))  &kp RA(DOT)  &trans  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &kp FSLH  &none
-                /* тхамби */ &kp RALT  &kp RALT  &mt LGUI TAB  &kp LCTRL  &kp K_APP  &kp LA(LS(RIGHT))
+                /* верх */ &kp RA(LS(N3))  &kp LG(HOME)  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LG(END)  &kp RBKT  &trans  &kp KP_SLASH  &kp N7  &kp N8  &kp N9  &kp RA(MINUS)  &kp RET
+                /* дім */ &kp NUBS  &kp RA(N6)  &kp LS(N9)  &hml LSHFT LS(N0)  &kp RA(N7)  &kp BSLH  &trans  &trans  &trans  &kp MINUS  &kp N4  &hmr RSHFT N5  &kp N6  &kp EQUAL  &kp LSHFT
+                /* низ */ &kp RA(COMMA)  &kp RA(LS(N9))  &kp RA(N9)  &kp RA(N0)  &kp RA(LS(N0))  &kp RA(DOT)  &trans  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &kp FSLH  &kp LS(N2)
+                /* тхамби */ &mt LCTRL LA(LS(LEFT))  &kp BSPC  &mt LGUI TAB  &kp LCTRL  &kp K_APP  &kp LA(LS(RIGHT))
             >;
         };
 
         layer_cyr {
             display-name = "CYR";
             bindings = <
-                /* верх */ &lt L_FN ESC  &nr SEMI  &nr G  &nr E  &nr L  &nr I  &trans  &nr O  &nr U  &nr K  &nr T  &nr RBKT  &lt L_FN RET
-                /* дім */ &lt L_CYR_S P  &nr C  &nr Y  &hml LSHFT J  &nr N  &nr R  &trans  &trans  &trans  &nr B  &nr S  &hmr RSHFT H  &nr F  &nr D  &nr Q
-                /* низ */ &lt L_SYMBOL A  &lt L_DIGITS LS(FSLH)  &nr COMMA  &hml LC(C) M  &hml LC(V) X  &nr W  &trans  &trans  &nr SQT  &nr LBKT  &nr V  &nr Z  &lt L_DIGITS DOT  &lt L_SYMBOL GRAVE
+                /* верх */ &lt L_FN ESC  &nr SEMI  &nr COMMA  &nr E  &nr L  &nr I  &trans  &nr O  &nr U  &nr K  &nr LBKT  &nr DOT  &lt L_FN RET
+                /* дім */ &lt L_CYR_S P  &nr C  &nr Y  &hml LSHFT J  &nr N  &nr R  &trans  &trans  &trans  &nr B  &nr S  &hmr RSHFT H  &nr F  &nr D  &nr RBKT
+                /* низ */ &lt L_SYMBOL A  &lt_cd L_DIGITS 0  &nr G  &hml LC(C) M  &hml LC(V) X  &nr W  &trans  &trans  &nr SQT  &nr Z  &nr V  &nr T  &nr Q  &lt L_SYMBOL LS(GRAVE)
                 /* тхамби */ &mt LCTRL LA(LS(LEFT))  &mt LALT BSPC  &mt LGUI TAB  &sl L_CYR_S  &lt L_DIGITS SPACE  &mt LA(RSHFT) LA(LS(RIGHT))
             >;
         };
 
-        /* Умовний: вмикається сам, коли активні CYR і FN (див. conditional_layers). */
         layer_fn_c {
             display-name = "FN_C";
             bindings = <
@@ -212,14 +211,6 @@
                 /* низ */ &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 /* тхамби */ &trans  &trans  &trans  &trans  &trans  &trans
             >;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        fn_from_cyr {
-            if-layers = <L_CYR L_FN>;
-            then-layer = <L_FN_C>;
         };
     };
 };
