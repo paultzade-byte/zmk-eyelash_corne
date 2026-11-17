@@ -2,43 +2,43 @@ layout: {zmk_keyboard: eyelash_corne}
 layers:
   GRAPH:
   - {t: '$$mdi:keyboard-esc$$', h: FN}
-  - B
-  - L
-  - D
-  - W
-  - Z
+  - '&nr B'
+  - '&nr L'
+  - '&nr D'
+  - '&nr W'
+  - '&nr Z'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '''', s: '"'}
-  - F
-  - O
-  - U
-  - J
+  - '&nr F'
+  - '&nr O'
+  - '&nr U'
+  - '&nr J'
   - {t: '$$mdi:keyboard-return$$', h: FN}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - N
-  - R
+  - '&nr N'
+  - '&nr R'
   - {t: T, h: '$$mdi:apple-keyboard-shift$$'}
-  - S
-  - G
+  - '&nr S'
+  - '&nr G'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Y
-  - H
+  - '&nr Y'
+  - '&nr H'
   - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
-  - E
-  - I
+  - '&nr E'
+  - '&nr I'
   - {t: ;, s: ':'}
   - {t: LGUI, h: SYMBOL}
   - {t: X, h: DIGITS}
-  - M
+  - '&nr M'
   - {t: C, h: Ctl+C}
   - {t: V, h: Ctl+V}
-  - Q
+  - '&nr Q'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - K
-  - P
+  - '&nr K'
+  - '&nr P'
   - {t: ., s: '>'}
   - {t: '-', s: _}
   - {t: ',', h: DIGITS, s: <}
@@ -51,17 +51,17 @@ layers:
   - {t: 'Alt+Sft+$$mdi:arrow-right-bold$$', h: 'Alt+$$mdi:apple-keyboard-shift$$'}
   GRAPH_ALT:
   - {t: '$$mdi:transfer$$', type: trans}
-  - B
-  - L
-  - D
-  - W
-  - Z
+  - '&nr B'
+  - '&nr L'
+  - '&nr D'
+  - '&nr W'
+  - '&nr Z'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '''', s: '"'}
-  - F
-  - O
-  - U
-  - J
+  - '&nr F'
+  - '&nr O'
+  - '&nr U'
+  - '&nr J'
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - NUBS
   - {t: 'Sft+,', s: Sft+<}
@@ -72,11 +72,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Y
-  - H
-  - A
-  - E
-  - I
+  - '&nr Y'
+  - '&nr H'
+  - '&nr A'
+  - '&nr E'
+  - '&nr I'
   - {t: Sft+;, h: '$$mdi:apple-keyboard-shift$$', s: 'Sft+:'}
   - NUBS
   - {t: 'Sft+[', s: 'Sft+{'}
@@ -86,8 +86,8 @@ layers:
   - Sft+NUBS
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - K
-  - P
+  - '&nr K'
+  - '&nr P'
   - {t: /, s: '?'}
   - {t: '-', s: _}
   - {t: ',', s: <}
@@ -296,45 +296,45 @@ layers:
   - Alt+Sft+$$mdi:arrow-right-bold$$
   CYR:
   - {t: '$$mdi:keyboard-esc$$', h: FN}
-  - {t: ;, s: ':'}
-  - G
-  - E
-  - L
-  - I
+  - '&nr SEMI'
+  - '&nr G'
+  - '&nr E'
+  - '&nr L'
+  - '&nr I'
   - {t: '$$mdi:transfer$$', type: trans}
-  - O
-  - U
-  - K
-  - T
-  - {t: ']', s: '}'}
+  - '&nr O'
+  - '&nr U'
+  - '&nr K'
+  - '&nr T'
+  - '&nr RBKT'
   - {t: '$$mdi:keyboard-return$$', h: FN}
   - {t: P, h: CYR_S}
-  - C
-  - Y
+  - '&nr C'
+  - '&nr Y'
   - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
-  - N
-  - R
+  - '&nr N'
+  - '&nr R'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - B
-  - S
+  - '&nr B'
+  - '&nr S'
   - {t: H, h: '$$mdi:apple-keyboard-shift$$'}
-  - F
-  - D
-  - Q
+  - '&nr F'
+  - '&nr D'
+  - '&nr Q'
   - {t: A, h: SYMBOL}
   - {t: Sft+/, h: DIGITS, s: 'Sft+?'}
-  - {t: ',', s: <}
+  - '&nr COMMA'
   - {t: M, h: Ctl+C}
   - {t: X, h: Ctl+V}
-  - W
+  - '&nr W'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '''', s: '"'}
-  - {t: '[', s: '{'}
-  - V
-  - Z
+  - '&nr SQT'
+  - '&nr LBKT'
+  - '&nr V'
+  - '&nr Z'
   - {t: ., h: DIGITS, s: '>'}
   - {t: '`', h: SYMBOL, s: '~'}
   - {t: 'Alt+Sft+$$mdi:arrow-left-bold$$', h: '$$mdi:apple-keyboard-control$$'}
