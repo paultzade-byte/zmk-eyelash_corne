@@ -1,7 +1,8 @@
 /*
  * Згенеровано layout_dev_project/scripts/zmk/keymap_from_dump.py з дампу
- * клавіатури (ZMK Studio). Шари в порядку id; порядок Studio — у
- * налаштуваннях клавіатури.
+ * клавіатури (ZMK Studio). Порядок шарів = пріоритет (нижчий у списку
+ * перекриває вищі): CYR одразу після GRAPH, інакше він ховає DIGITS/SYMBOL/
+ * FN/CYR_S. id у #define = позиція тут. 2026-11-17.
  */
 
 #include <behaviors.dtsi>
@@ -9,12 +10,12 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define L_GRAPH      0
-#define L_GRAPH_ALT  1
-#define L_DIGITS     2
-#define L_SYMBOL     3
-#define L_FN         4
-#define L_CYR_S      5
-#define L_CYR        6
+#define L_GRAPH_ALT  2
+#define L_DIGITS     3
+#define L_SYMBOL     4
+#define L_FN         5
+#define L_CYR_S      6
+#define L_CYR        1
 #define L_FN_C       7
 
 / {
@@ -143,6 +144,16 @@
             >;
         };
 
+        layer_cyr {
+            display-name = "CYR";
+            bindings = <
+                /* верх */ &lt L_FN ESC  &nr SEMI  &nr COMMA  &nr E  &nr L  &nr I  &trans  &nr O  &nr U  &nr K  &nr LBKT  &nr DOT  &lt L_FN RET
+                /* дім */ &lt L_CYR_S P  &nr C  &nr Y  &hml LSHFT J  &nr N  &nr R  &trans  &trans  &trans  &nr B  &nr S  &hmr RSHFT H  &nr F  &nr D  &nr RBKT
+                /* низ */ &lt L_SYMBOL A  &lt_cd L_DIGITS 0  &nr G  &hml LC(C) M  &hml LC(V) X  &nr W  &trans  &trans  &nr SQT  &nr Z  &nr V  &nr T  &nr Q  &lt L_SYMBOL LS(GRAVE)
+                /* тхамби */ &mt LCTRL LA(LS(LEFT))  &mt LALT BSPC  &mt LGUI TAB  &sl L_CYR_S  &lt L_DIGITS SPACE  &mt LA(RSHFT) LA(LS(RIGHT))
+            >;
+        };
+
         layer_graph_alt {
             display-name = "GRAPH_ALT";
             bindings = <
@@ -190,16 +201,6 @@
                 /* дім */ &kp NUBS  &kp RA(N6)  &kp LS(N9)  &hml LSHFT LS(N0)  &kp RA(N7)  &kp BSLH  &trans  &trans  &trans  &kp MINUS  &kp N4  &hmr RSHFT N5  &kp N6  &kp EQUAL  &kp LSHFT
                 /* низ */ &kp RA(COMMA)  &kp RA(LS(N9))  &kp RA(N9)  &kp RA(N0)  &kp RA(LS(N0))  &kp RA(DOT)  &trans  &trans  &kp N0  &kp N1  &kp N2  &kp N3  &kp FSLH  &kp LS(N2)
                 /* тхамби */ &mt LCTRL LA(LS(LEFT))  &kp BSPC  &mt LGUI TAB  &kp LCTRL  &kp K_APP  &kp LA(LS(RIGHT))
-            >;
-        };
-
-        layer_cyr {
-            display-name = "CYR";
-            bindings = <
-                /* верх */ &lt L_FN ESC  &nr SEMI  &nr COMMA  &nr E  &nr L  &nr I  &trans  &nr O  &nr U  &nr K  &nr LBKT  &nr DOT  &lt L_FN RET
-                /* дім */ &lt L_CYR_S P  &nr C  &nr Y  &hml LSHFT J  &nr N  &nr R  &trans  &trans  &trans  &nr B  &nr S  &hmr RSHFT H  &nr F  &nr D  &nr RBKT
-                /* низ */ &lt L_SYMBOL A  &lt_cd L_DIGITS 0  &nr G  &hml LC(C) M  &hml LC(V) X  &nr W  &trans  &trans  &nr SQT  &nr Z  &nr V  &nr T  &nr Q  &lt L_SYMBOL LS(GRAVE)
-                /* тхамби */ &mt LCTRL LA(LS(LEFT))  &mt LALT BSPC  &mt LGUI TAB  &sl L_CYR_S  &lt L_DIGITS SPACE  &mt LA(RSHFT) LA(LS(RIGHT))
             >;
         };
 
