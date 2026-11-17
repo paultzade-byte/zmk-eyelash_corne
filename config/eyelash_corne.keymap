@@ -213,4 +213,11 @@
             >;
         };
     };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        fn_from_cyr {
+            if-layers = <L_CYR L_FN>;
+            then-layer = <L_FN_C>;
+        };
+    };
 };
